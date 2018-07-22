@@ -25,7 +25,7 @@ class Shipping extends Component {
       city: data.city,
       zip_code: data.zip_code,
     });
-debugger;
+
     if (req_verify.data.ErrorCode !== 0) {
       alert("Address not found!")
     } else {
