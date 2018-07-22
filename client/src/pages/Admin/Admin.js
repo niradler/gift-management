@@ -12,7 +12,7 @@ class Admin extends Component {
 
   init = async () => {
     const req = await api.getShippingAddress();
-    this.setState({table_data: req.data.address || []});
+    this.setState({table_data: req.data || []});
   };
 
   render() {
