@@ -19,8 +19,21 @@ class Shipping extends Component {
       phone: e.target.elements["phone"].value,
       notes: e.target.elements["notes"].value,
     }
-    const req = await api.addShipping(data);
-    this.props.history.push("/");
+    
+    const req_verify = await api.verifyAddress({
+      address: data.address,
+      city: data.city,
+      zip_code: data.zip_code,
+    });
+debugger;
+    if (req_verify.data.ErrorCode !== 0) {
+      alert("Address not found!")
+    } else {
+      const req_add = await api.addShipping(data);
+      alert("Complete!")
+      this.props.history.push("/");
+    }
+
   }
 
   render() {

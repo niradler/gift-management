@@ -25,7 +25,13 @@ const addShipping = (data) =>{
     return _send("POST", "/user/shipping", data);
 }
 
+const verifyAddress = (data) =>{
+
+    return _send("POST", "/user/verifyAddress", data);
+}
+
 export default {
     getShippingAddress,
-    addShipping
+    addShipping,
+    verifyAddress
 }
