@@ -5,7 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-<BrowserRouter>
+<BrowserRouter basename="/gift-management">
 <App />
 </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();
