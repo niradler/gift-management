@@ -1,8 +1,11 @@
+const { ShippingDetail } = require('../../models');
+
 class GiftController {
 
     async addShipping(req, res) {
-
-        return res.json({id: 1})
+        const shippingDetail = new ShippingDetail(req.body);
+        
+        return shippingDetail.save((d) => res.json(d))
     }
 
 }
